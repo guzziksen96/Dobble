@@ -2,7 +2,6 @@
 import { NavLink, Route, Switch } from "react-router-dom";
 
 import AboutPage from "./AboutPage";
-import FuelSavingsPage from "./containers/FuelSavingsPage";
 import HomePage from "./HomePage";
 import NotFoundPage from "./NotFoundPage";
 import PropTypes from "prop-types";
@@ -27,7 +26,6 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/fuel-savings" component={FuelSavingsPage} />
           <Route path="/about" component={AboutPage} />
           <Route component={NotFoundPage} />
         </Switch>
