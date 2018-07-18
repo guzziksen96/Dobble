@@ -7,7 +7,7 @@ import cardDealerHelper from '../helpers/cardDealerHelper';
 
 interface CardProps {
     chosenIcon?: number;
-     handleChange(event: any): void;
+    handleChange(event: any): void;
   }
 
 class Card extends  React.Component<CardProps, {}>  {
