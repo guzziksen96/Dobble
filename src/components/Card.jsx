@@ -3,7 +3,6 @@ import CardIconCords from '../constants/cardIconCords';
 import IconsContainer  from './canvas/IconsContainer';
 import IconTemplate from './canvas/IconTemplate';
 import cardDealerHelper from '../helpers/cardDealerHelper';
-console.log(IconsContainer);
 
 
 class Card extends Component {
@@ -17,9 +16,7 @@ class Card extends Component {
 
       handleClick(icon) {
         alert('Miodzior ' + icon)
-        console.log(icon)
-        this.setState({ chosenIcon: icon
-        });
+        this.setState({ chosenIcon: icon});
     }
     
     render() {
@@ -40,13 +37,18 @@ const style = {
     backgroundColor: "#eee",
     position: "relative"
 }
+let test = function(message){
+   return () => alert("Message: " + message);
+}
 
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7];
 let i =0;
 const icons = cardDealerHelper[randomCardNumber].map((number) => 
    <IconTemplate key={number}
+        index={number}
         cords={CardIconCords[i++]}   
-        icon ={IconsContainer[number]} />
+        icon ={IconsContainer[number]} 
+        onClick = {test(number)}
+        />
 
 );
 
