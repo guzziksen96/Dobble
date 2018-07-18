@@ -21,6 +21,7 @@ class Card extends Component {
         this.setState({ chosenIcon: icon
         });
     }
+    
     render() {
 
         return (
@@ -32,7 +33,6 @@ class Card extends Component {
 }
 let randomCardNumber = Math.floor(Math.random() * 50) + 1 ; 
 const style = {
-
     width: 500,
     height: 500,
     borderRadius: "50%",

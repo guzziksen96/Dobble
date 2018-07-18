@@ -11,7 +11,7 @@ class IconTemplate extends Component {
         let Icon = this.props.icon;
 
         return (
-                <div style={styleMerged} >
+                <div style={styleMerged} onClick={this.props.onClick}>
                     <Icon />
                 </div>
         );
@@ -21,10 +21,12 @@ const style = {
     position: "absolute",
     height: 60,
     width: 60,
-    fill: "red"
+    fill: "black"
 }
+
 IconTemplate.propTypes = {
     cords: PropTypes.object.isRequired,
-    icon: PropTypes.func.isRequired
+    icon: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired
 };
 export default IconTemplate;
