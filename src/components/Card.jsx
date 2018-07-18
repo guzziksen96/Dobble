@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import WatchIcon from './canvas/WatchIcon';
 import CardIconCords from '../constants/cardIconCords';
-import WaterBottleIcon from '../svg/001-water-bottle.svg'
-//C:\Users\jakub\OneDrive\Pulpit\Klaudia\Dobble\src\svg\001-water-bottle.svg
+import IconsContainer  from './canvas/IconsContainer';
+import IconTemplate from './canvas/IconTemplate';
+
 class Card extends Component {
     render() {
+
         return (
             <div style={style}>
-                {/* {listItems} */}
-                <WaterBottleIcon width={50} height={50} />
+                {icons} 
             </div>
         );
     }
@@ -24,8 +24,12 @@ const style = {
 }
 
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7];
-const listItems = numbers.map((number) =>
-    <WatchIcon cords={CardIconCords[number]} />
+
+const icons = numbers.map((number) => 
+   <IconTemplate key={number}
+        cords={CardIconCords[number]}   
+        icon ={IconsContainer[number]} />
+
 );
 
 
