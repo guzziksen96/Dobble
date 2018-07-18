@@ -15,12 +15,24 @@ class Card extends Component {
       }
 
       handleClick(icon) {
-        alert('Miodzior ' + icon)
-        this.setState({ chosenIcon: icon});
+          return () => {
+            alert('Miodzior ' + icon)
+            this.setState({ chosenIcon: icon});
+          }
     }
     
     render() {
+        let randomCardNumber = Math.floor(Math.random() * 50) + 1 ; 
+        let i =0;
+        const icons = cardDealerHelper[randomCardNumber].map((number) => 
+        <IconTemplate key={number}
+                index={number}
+                cords={CardIconCords[i++]}   
+                icon ={IconsContainer[number]} 
+                onClick = {this.handleClick(number)}
+                />
 
+        );
         return (
             <div style={style}>
                 {icons} 
@@ -28,7 +40,6 @@ class Card extends Component {
         );
     }
 }
-let randomCardNumber = Math.floor(Math.random() * 50) + 1 ; 
 const style = {
     width: 500,
     height: 500,
@@ -41,16 +52,7 @@ let test = function(message){
    return () => alert("Message: " + message);
 }
 
-let i =0;
-const icons = cardDealerHelper[randomCardNumber].map((number) => 
-   <IconTemplate key={number}
-        index={number}
-        cords={CardIconCords[i++]}   
-        icon ={IconsContainer[number]} 
-        onClick = {test(number)}
-        />
 
-);
 
 
 export default Card;
