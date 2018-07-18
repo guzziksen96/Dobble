@@ -25,6 +25,6 @@ const style = {
 }
 IconTemplate.propTypes = {
     cords: PropTypes.object.isRequired,
-    icon: PropTypes.object.isRequired
+    icon: PropTypes.func.isRequired
 };
 export default IconTemplate;

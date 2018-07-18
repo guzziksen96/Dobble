@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import CardIconCords from '../constants/cardIconCords';
 import IconsContainer  from './canvas/IconsContainer';
 import IconTemplate from './canvas/IconTemplate';
+import cardDealerHelper from '../helpers/cardDealerHelper';
+console.log(IconsContainer);
+
 
 class Card extends Component {
     constructor(props) {
@@ -13,7 +16,7 @@ class Card extends Component {
       }
 
       handleClick(icon) {
-        alert('Miodzio ' + icon)
+        alert('Miodzior ' + icon)
         console.log(icon)
         this.setState({ chosenIcon: icon
         });
@@ -27,7 +30,7 @@ class Card extends Component {
         );
     }
 }
-
+let randomCardNumber = Math.floor(Math.random() * 50) + 1 ; 
 const style = {
 
     width: 500,
@@ -39,10 +42,10 @@ const style = {
 }
 
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7];
-
-const icons = numbers.map((number) => 
+let i =0;
+const icons = cardDealerHelper[randomCardNumber].map((number) => 
    <IconTemplate key={number}
-        cords={CardIconCords[number]}   
+        cords={CardIconCords[i++]}   
         icon ={IconsContainer[number]} />
 
 );

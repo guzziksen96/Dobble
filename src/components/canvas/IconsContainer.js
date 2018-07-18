@@ -101,4 +101,11 @@ export default [
     BackpackIcon,
     Axe1Icon,
     AxeIcon,
+    AxeIcon,
+    AxeIcon,
+    AxeIcon,
+    AxeIcon,
+    AxeIcon,
+    AxeIcon,
+    AxeIcon,
 ];
