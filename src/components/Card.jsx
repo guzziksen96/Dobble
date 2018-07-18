@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import WatchIcon from './canvas/WatchIcon';
 import CardIconCords from '../constants/cardIconCords';
-
+import WaterBottleIcon from '../svg/001-water-bottle.svg'
+//C:\Users\jakub\OneDrive\Pulpit\Klaudia\Dobble\src\svg\001-water-bottle.svg
 class Card extends Component {
     render() {
         return (
             <div style={style}>
-                {listItems}
-
+                {/* {listItems} */}
+                <WaterBottleIcon width={50} height={50} />
             </div>
         );
     }
