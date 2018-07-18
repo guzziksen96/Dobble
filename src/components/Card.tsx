@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import * as React from "react";
 import CardIconCords from '../constants/cardIconCords';
 import IconsContainer  from './canvas/IconsContainer';
 import IconTemplate from './canvas/IconTemplate';
 import cardDealerHelper from '../helpers/cardDealerHelper';
 
 
-class Card extends Component {
+interface CardProps {
+    chosenIcon?: number;
+     handleChange(event: any): void;
+  }
+
+class Card extends  React.Component<CardProps, {}>  {
     constructor(props) {
         super(props);
         this.state = {

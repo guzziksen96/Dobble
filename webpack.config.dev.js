@@ -5,7 +5,8 @@ import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
 
 export default {
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.json']
+    
+    extensions: ['*', '.js', '.jsx', '.json', '.ts', '.tsx']
   },
   devtool: 'cheap-module-eval-source-map', // more info:https://webpack.js.org/guides/development/#using-source-maps and https://webpack.js.org/configuration/devtool/
   entry: [
@@ -38,9 +39,14 @@ export default {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
+        test: /\.(t|j)sx?$/,
+       loader: ['awesome-typescript-loader?module=es6'],
+       exclude: [/node_modules/]
+      }, 
+      {
+       test: /\.js$/,
+       loader: 'source-map-loader',
+       enforce: 'pre'
       },
       {
         test: /\.eot(\?v=\d+.\d+.\d+)?$/,
