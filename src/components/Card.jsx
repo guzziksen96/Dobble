@@ -4,6 +4,20 @@ import IconsContainer  from './canvas/IconsContainer';
 import IconTemplate from './canvas/IconTemplate';
 
 class Card extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            chosenIcon: 0
+          };
+        this.handleClick = this.handleClick.bind(this);
+      }
+
+      handleClick(icon) {
+        alert('Miodzio ' + icon)
+        console.log(icon)
+        this.setState({ chosenIcon: icon
+        });
+    }
     render() {
 
         return (
@@ -13,6 +27,7 @@ class Card extends Component {
         );
     }
 }
+
 const style = {
 
     width: 500,
