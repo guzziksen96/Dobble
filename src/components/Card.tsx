@@ -57,7 +57,4 @@ let test = function(message){
    return () => alert("Message: " + message);
 }
 
-
-
-
 export default Card;
