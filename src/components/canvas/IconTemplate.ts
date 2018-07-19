@@ -1,7 +1,15 @@
-import React, { Component } from 'react';
+import * as React from "react";
 import PropTypes from 'prop-types';
 
-class IconTemplate extends Component {
+
+type IconTemplateProps = {
+    cords: object;
+    icon(): void;
+    onClick?(): void; 
+    index: number;
+}
+
+class IconTemplate extends React.Component<IconTemplateProps, {}> {
     render() {
         let { left, top } = this.props.cords;
         let x = top - style.height / 2;
@@ -24,9 +32,4 @@ const style = {
     fill: "black"
 }
 
-IconTemplate.propTypes = {
-    cords: PropTypes.object.isRequired,
-    icon: PropTypes.func.isRequired,
-    onClick: PropTypes.func.isRequired
-};
 export default IconTemplate;
