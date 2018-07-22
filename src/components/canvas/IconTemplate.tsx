@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 type IconTemplateProps = {
     cords: object;
-    icon(): void;
+    icon: JSX.Element;
     onClick?(): void; 
     index: number;
 }
@@ -31,5 +31,7 @@ const style = {
     width: 60,
     fill: "black"
 }
+
+
 
 export default IconTemplate;

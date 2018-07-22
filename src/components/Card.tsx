@@ -4,16 +4,28 @@ import IconsContainer  from './canvas/IconsContainer';
 import IconTemplate from './canvas/IconTemplate';
 import cardDealerHelper from '../helpers/cardDealerHelper';
 
+interface Element {
+    icon: JSX.Element;
+    onClick?(): void; 
+    index: number;
+}
 
 interface CardProps {
-    chosenIcon?: number;
-    handleChange(event: any): void;
+    handleClick(): void;
+    elements: Element[];
   }
 
-class Card extends  React.Component<CardProps, {}>  {
+  interface CardState {
+    elements: Element[];
+    chosenIcon?: number;
+  }
+
+class Card extends  React.Component<CardProps, CardState>  {
     constructor(props) {
         super(props);
+        debugger;
         this.state = {
+            elements: this.props.elements,
             chosenIcon: 0
           };
         this.handleClick = this.handleClick.bind(this);
@@ -27,17 +39,19 @@ class Card extends  React.Component<CardProps, {}>  {
     }
     
     render() {
-        let randomCardNumber = Math.floor(Math.random() * 50) + 1 ; 
-        let i =0;
-        const icons = cardDealerHelper[randomCardNumber].map((number) => 
-        <IconTemplate key={number}
-                index={number}
-                cords={CardIconCords[i++]}   
-                icon ={IconsContainer[number]} 
-                onClick = {this.handleClick(number)}
-                />
+        // let randomCardNumber = Math.floor(Math.random() * 50) + 1 ; 
+        // let i =0;
+        // const icons = cardDealerHelper[randomCardNumber].map((number) => 
+        // <IconTemplate key={number}
+        //         index={number}
+        //         cords={CardIconCords[i++]}   
+        //         icon ={IconsContainer[number]} 
+        //         onClick = {this.handleClick(number)}
+        //         />
 
-        );
+        // );
+        const icons = this.props.elements.map((element) => { return element.icon;});
+        debugger;
         return (
             <div style={style}>
                 {icons} 
