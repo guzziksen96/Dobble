@@ -5,8 +5,12 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
+import registerServiceWorker from './registerServiceWorker.ts';
+// import manifest from "!!file?publicPath=/&name=manifest.json!./manifest.json";
 import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
 require('./favicon.ico'); // Tell webpack to load favicon.ico
+{/* <link rel="manifest" href="/manifest.json"> */}
+// require('file?name=manifest.json!./path/to/manifest.json');
 const store = configureStore();
 
 render(
@@ -14,6 +18,7 @@ render(
     <Root store={store} history={history} />
   </AppContainer>,
   document.getElementById('app')
+  
 );
 
 if (module.hot) {
@@ -27,3 +32,6 @@ if (module.hot) {
     );
   });
 }
+registerServiceWorker();
+
+
