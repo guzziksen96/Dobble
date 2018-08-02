@@ -3,7 +3,9 @@ import CardIconCords from '../constants/cardIconCords';
 import IconsContainer  from './canvas/IconsContainer';
 import IconTemplate from './canvas/IconTemplate';
 import cardDealerHelper from '../helpers/cardDealerHelper';
-
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as Actions from '../actions/cardActions';
 
 interface CardProps {
     chosenIcon?: number;
@@ -57,7 +59,15 @@ let test = function(message){
    return () => alert("Message: " + message);
 }
 
+const mapStateToProps = (state) => ({
+	state: state
+});
 
+const mapDispatchToProps = (dispatch) => ({
+	actions: bindActionCreators(Actions, dispatch)
+})
 
-
-export default Card;
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Card);

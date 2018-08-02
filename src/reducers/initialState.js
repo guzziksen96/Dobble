@@ -1,3 +1,5 @@
+import cardDealerHelper from "../helpers/cardDealerHelper";
+
 export default {
   fuelSavings: {
     newMpg: '',
@@ -13,6 +15,7 @@ export default {
       monthly: 0,
       annual: 0,
       threeYear: 0
-    }
+    },
+    currCardIcons: cardDealerHelper[1]
   }
 };

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import fuelSavings from './fuelSavingsReducer';
+import settingCurrCard from './settingCurrCardReducer';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  fuelSavings,
+  settingCurrCard,
   routing: routerReducer
 });
 
