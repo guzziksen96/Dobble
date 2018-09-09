@@ -63,7 +63,6 @@ function generateElements() : Element[]  {
     };
     return element;
   });
-  debugger;
   return icons;
 }
 function handleClick() {

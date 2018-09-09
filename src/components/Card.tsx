@@ -23,7 +23,6 @@ interface CardProps {
 class Card extends  React.Component<CardProps, CardState>  {
     constructor(props) {
         super(props);
-        debugger;
         this.state = {
             elements: this.props.elements,
             chosenIcon: 0
